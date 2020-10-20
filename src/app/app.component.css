@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+}
+
+aside {
+  height: 100vh;
+  flex: 1;
+  background: #618cde;
+  color: white;
+}
+
+main {
+  height: 100vh;
+  flex: 5;
+}

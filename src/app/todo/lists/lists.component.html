@@ -1,0 +1,20 @@
+<ng-container *mobxAutorun>
+  <header class="m-20">Списки</header>
+  <div *ngIf="lists.length === 0" class="placeholder">Списков нет</div>
+  <button
+    (click)="selectList(list.id)"
+    *ngFor="let list of lists"
+    [class.list--selected]="list.isSelected"
+    class="list"
+  >
+    <span class="title">{{ list.title }}</span>
+  </button>
+  <input
+    (input)="setTitle($event.target.value)"
+    (keydown.enter)="addList()"
+    [value]="title"
+    class="title-input m-10 theme--light"
+    placeholder="Добавить список (Enter)"
+    type="text"
+  />
+</ng-container>

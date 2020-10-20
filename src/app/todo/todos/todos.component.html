@@ -1,0 +1,38 @@
+<ng-container *mobxAutorun>
+  <ng-container *ngIf="selectedList">
+    <header class="header m-20">{{ selectedList.title }}</header>
+    <input
+      class="title-input m-10"
+      (input)="setTitle($event.target.value)"
+      (keydown.enter)="addTodo()"
+      [value]="title"
+      placeholder="Добавить задачу (Enter)"
+      type="text"
+    />
+    <label class="todo" *ngFor="let todo of selectedList.activeTodos">
+      <input
+        class="checkbox mx-20"
+        type="checkbox"
+        [checked]="todo.checked"
+        (input)="todo.toggle()"
+      />
+      <span class="title">{{ todo.title }}</span>
+    </label>
+    <div *ngIf="selectedList.activeTodos.length === 0" class="placeholder">
+      Все задачи выполнены
+    </div>
+    <h3 class="m-20">Завершенные</h3>
+    <label
+      class="todo checked"
+      *ngFor="let todo of selectedList.completedTodos"
+    >
+      <input
+        class="checkbox mx-20"
+        type="checkbox"
+        [checked]="todo.checked"
+        (input)="todo.toggle()"
+      />
+      <span class="title">{{ todo.title }}</span>
+    </label>
+  </ng-container>
+</ng-container>
