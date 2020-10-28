@@ -11,7 +11,7 @@ import { computed, observable } from 'mobx';
 })
 export class ListsComponent {
   @observable
-  title = '';
+  newListTitle = '';
 
   @computed
   get lists(): ListModel[] {
@@ -25,11 +25,11 @@ export class ListsComponent {
   }
 
   public addList(): void {
-    this.listsStore.addList(this.title);
+    this.listsStore.addList(this.newListTitle);
     this.setTitle('');
   }
 
   public setTitle(title: string): void {
-    this.title = title;
+    this.newListTitle = title;
   }
 }

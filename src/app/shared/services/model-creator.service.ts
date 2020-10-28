@@ -6,8 +6,8 @@ import { Injectable, Injector, Type, ɵsetCurrentInjector } from '@angular/core'
 export class ModelCreatorService {
   constructor(private injector: Injector) {}
 
-  public create<T>(target: Type<T>): T {
+  public create<T>(model: Type<T>): T {
     ɵsetCurrentInjector(this.injector);
-    return new target();
+    return new model();
   }
 }

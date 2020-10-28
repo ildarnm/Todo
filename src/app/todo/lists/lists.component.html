@@ -12,7 +12,7 @@
   <input
     (input)="setTitle($event.target.value)"
     (keydown.enter)="addList()"
-    [value]="title"
+    [value]="newListTitle"
     class="title-input m-10 theme--light"
     placeholder="Добавить список (Enter)"
     type="text"
