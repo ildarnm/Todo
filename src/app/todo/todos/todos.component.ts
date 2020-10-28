@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { computed } from 'mobx-angular';
-import { ListModel } from '../../core/models/list.model';
-import { ListsStore } from '../../core/stores/lists.store';
+import { ListModel } from '../../shared/models/list.model';
+import { ListsStore } from '../../shared/stores/lists.store';
 import { observable } from 'mobx';
 
 @Component({
@@ -16,7 +16,6 @@ export class TodosComponent implements OnInit {
 
   @computed
   get selectedList(): ListModel | undefined {
-    console.log(this.listStore.selectedList);
     return this.listStore.selectedList;
   }
 

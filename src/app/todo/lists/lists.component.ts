@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ListsStore } from '../../core/stores/lists.store';
-import { ListModel } from '../../core/models/list.model';
+import { ListsStore } from '../../shared/stores/lists.store';
+import { ListModel } from '../../shared/models/list.model';
 import { computed, observable } from 'mobx';
 
 @Component({

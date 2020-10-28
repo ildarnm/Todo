@@ -9,7 +9,7 @@ import { ModelCreatorService } from '../services/model-creator.service';
 export class ListsStore {
   @observable.shallow
   items: ListModel[] = [];
-  @observable.ref
+  @observable
   selectedListId: string | undefined;
 
   @computed

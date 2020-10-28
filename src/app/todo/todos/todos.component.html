@@ -16,7 +16,7 @@
         [checked]="todo.checked"
         (input)="todo.toggle()"
       />
-      <span class="title">{{ todo.title }}</span>
+      <span class="title">{{ todo.title }} ({{todo.list?.title}})</span>
     </label>
     <div *ngIf="selectedList.activeTodos.length === 0" class="placeholder">
       Все задачи выполнены
